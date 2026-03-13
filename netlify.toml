@@ -1,7 +1,7 @@
-# Netlify Configuration for ArogyaMitra Frontend
+# Netlify Configuration for SehatSaathi Frontend
 
 [build]
-  base = "react-frontend"
+  base = "frontend"
   publish = "dist"
   command = "npm run build"
 
