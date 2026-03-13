@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Activity, Apple, ChevronRight, AlertCircle,
-  TrendingUp, Target, Heart, MessageCircle,
-  Stethoscope, Flame, Zap, Star
+  Activity, Apple, Calendar, ChevronRight, AlertCircle,
+  TrendingUp, Trophy, Target, Heart, MessageCircle,
+  Stethoscope, Flame, Droplet, Wind, Zap, Star
 } from 'lucide-react';
 import api from '../services/api';
 import { UserData, Stats, RecentActivity } from '../types';
