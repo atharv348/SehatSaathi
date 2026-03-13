@@ -1,4 +1,4 @@
-import { MessageCircle, Send, Sparkles, HelpCircle } from 'lucide-react';
+import { Send, Sparkles, HelpCircle } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { ChatMessage } from '../types';
 import api from '../services/api';
