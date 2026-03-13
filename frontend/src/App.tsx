@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-import Dashboard from './pages/dashboard';
+import Dashboard from './pages/Dashboard';
 import WorkoutPlan from './pages/WorkoutPlan';
 import MealPlan from './pages/MealPlan';
 import Progress from './pages/Progress';

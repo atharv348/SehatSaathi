@@ -78,7 +78,17 @@ function ECGLine({ color = '#2563eb', width = 260, height = 50, animate = true }
 }
 
 // Radial progress ring
-function RadialRing({ value, max, size = 80, stroke = 7, color = '#2563eb', label = '', sublabel = '' }) {
+interface RadialRingProps {
+  value: number;
+  max: number;
+  size?: number;
+  stroke?: number;
+  color?: string;
+  label?: string;
+  sublabel?: string;
+}
+
+function RadialRing({ value, max, size = 80, stroke = 7, color = '#2563eb', sublabel = '' }: RadialRingProps) {
   const r = (size - stroke * 2) / 2;
   const circ = 2 * Math.PI * r;
   const pct = Math.min(value / max, 1);
@@ -109,12 +119,19 @@ function PulseDot({ color = '#2563eb' }) {
 }
 
 // Mini sparkline
-function Sparkline({ data, color = '#2563eb', width = 80, height = 30 }) {
+interface SparklineProps {
+  data: number[];
+  color?: string;
+  width?: number;
+  height?: number;
+}
+
+function Sparkline({ data, color = '#2563eb', width = 80, height = 30 }: SparklineProps) {
   if (!data.length) return null;
   const max = Math.max(...data);
   const min = Math.min(...data);
   const range = max - min || 1;
-  const pts = data.map((v, i) => {
+  const pts = data.map((v: number, i: number) => {
     const x = (i / (data.length - 1)) * width;
     const y = height - ((v - min) / range) * (height - 4) - 2;
     return `${x},${y}`;
@@ -529,7 +546,7 @@ export default function Dashboard() {
                   {backendStatus === 'online' ? 'Systems Online' : 'Offline'}
                 </span>
               </div>
-              <div style={{ width: 36, height: 36, borderRadius: 99, background: 'white', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', shadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
+              <div style={{ width: 36, height: 36, borderRadius: 99, background: 'white', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
                 <Bell size={16} color="#64748b" />
               </div>
               <div onClick={() => navigate('/profile')} style={{ width: 36, height: 36, borderRadius: 99, background: 'linear-gradient(135deg, #dbeafe, #eff6ff)', border: '1px solid #bfdbfe', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
@@ -892,7 +909,7 @@ export default function Dashboard() {
 
           {/* FOOTER STATUS */}
           <div style={{ marginTop: 32, paddingTop: 20, borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} className="fade-in delay-5">
-            <div style={{ display: 'flex', items: 'center', gap: 24, fontSize: 11, color: '#94a3b8', fontFamily: "'DM Mono', monospace" }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 24, fontSize: 11, color: '#94a3b8', fontFamily: "'DM Mono', monospace" }}>
               <span>SehatSaathi Health OS v2.0</span>
               <span>•</span>
               <span>HIPAA Compliant</span>
