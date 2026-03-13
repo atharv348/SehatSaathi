@@ -1,7 +1,5 @@
 import cv2
 import numpy as np
-import torch
-from torchvision import transforms
 from PIL import Image
 
 def detect_roi(image_cv):
@@ -64,11 +62,10 @@ def preprocess_for_diagnosis(image: Image.Image):
     # 6. Convert back to PIL
     img_pil = Image.fromarray(cv2.cvtColor(img_cv, cv2.COLOR_BGR2RGB))
     
-    # 7. Final PyTorch transforms
-    preprocess = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
-    ])
-    
-    input_tensor = preprocess(img_pil)
-    return input_tensor.unsqueeze(0)  # Add batch dimension
+    # 7. Normalize using numpy (ImageNet mean/std)
+    img_array = np.array(img_pil).astype(np.float32) / 255.0
+    mean = np.array([0.485, 0.456, 0.406])
+    std = np.array([0.229, 0.224, 0.225])
+    img_array = (img_array - mean) / std
+    # Return as (1, C, H, W) shaped numpy array (batch dimension added)
+    return img_array.transpose(2, 0, 1)[np.newaxis, ...]
