@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, File, UploadFile
 from sqlalchemy.orm import Session
 from typing import List, Optional
-import torch
 from PIL import Image
 import io
 import os
