@@ -4,7 +4,15 @@ SehatSaathi is a sophisticated health-tracking and multi-organ diagnostic applic
 
 ---
 
-## 🚀 Features
+## 🚀 Live Deployment
+
+- **Frontend (Vercel)**: [https://sehatsaathi-orpin.vercel.app](https://sehatsaathi-orpin.vercel.app)
+- **Backend API (Render)**: [https://sehatsaathi-backend.onrender.com](https://sehatsaathi-backend.onrender.com)
+- **API Documentation**: [https://sehatsaathi-backend.onrender.com/docs](https://sehatsaathi-backend.onrender.com/docs)
+
+---
+
+## ✨ Features
 
 - **AI Diagnostics**: Multi-organ clinical scan analysis (Skin, Lungs, Eye, Oral, Bone) using MobileNetV2 deep learning models.
 - **Futuristic Dashboard**: A high-tech "Health Matrix" interface with live SVG ECG animations, radial progress rings, and real-time biometric simulations.
