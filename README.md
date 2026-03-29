@@ -6,7 +6,7 @@ SehatSaathi is a sophisticated health-tracking and multi-organ diagnostic applic
 
 ## 🚀 Live Deployment
 
-- **Frontend (Vercel)**: [https://sehatsaathi-orpin.vercel.app](https://sehatsaathi-orpin.vercel.app)
+- **Frontend (Vercel)**: [https://sehatsaathi-orpin.vercel.app](https://sehat-saathi-teal.vercel.app/login)
 - **Backend API (Render)**: [https://sehatsaathi-backend.onrender.com](https://sehatsaathi-backend.onrender.com)
 - **API Documentation**: [https://sehatsaathi-backend.onrender.com/docs](https://sehatsaathi-backend.onrender.com/docs)
 
